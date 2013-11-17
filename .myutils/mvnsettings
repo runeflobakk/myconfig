@@ -53,13 +53,13 @@ if [[ -z "$*" || "$1" == "-h" || "$1" == "--help" ]]; then
     echo "There are no settings.xml variants available to choose from."
     
     echo -e "\nTo use mvnsettings you need to create at least 1 file containing any"
-    echo "user-specific configuration of Maven, as described at"
+    echo "user-specific configuration for Maven, as described at"
     echo "$(underline http://maven.apache.org/settings.html), located in ${m2dir},"
     echo "and named as $(strong settings-variantname.xml). The $(strong variantname) part"
     echo "of the filename is recognized by mvnsettings to be included as a variant to"
-    echo "choose from. You may have as many files following this naming scheme as you,"
-    echo "and they will all be available to mvnsettings to activate as your \"current\""
-    echo "settings.xml configuration."
+    echo "choose from. You may have as many files following this naming scheme as you"
+    echo "need, and they will all be available to mvnsettings to activate as your"
+    echo "\"current\" settings.xml configuration."
 
     if [[ -f "${actualSettings}" ]]; then
       echo -e "\nThe easiest way to start using mvnsettings is to rename your existing settings.xml"
