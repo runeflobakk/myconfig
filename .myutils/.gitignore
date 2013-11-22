@@ -4,3 +4,5 @@
 # except
 !.gitignore
 !mvnsettings
+!pretty
+!mvn-override-version

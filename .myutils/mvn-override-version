@@ -1,0 +1,27 @@
+#!/bin/bash
+
+function show-syntax {
+  echo "Syntax:"
+  echo "$0 <tempVersion> <originalVersion> <goals>"
+  echo ""
+  echo "tempVersion        The version to temporarily set for the Maven build"
+  echo "originalVersion    The version to revert to after the Maven build"
+  echo "goals              The Maven goals to run, e.g. clean install"
+}
+
+tempVersion=$1
+originalVersion=$2
+shift 2
+goals="$*"
+
+if [[ -z "$tempVersion" || "$tempVersion" == "--help" || -z "$goals" ]]; then
+  show-syntax
+  exit 1
+fi
+
+
+
+
+mvn versions:set -DnewVersion=$tempVersion
+mvn $goals
+mvn versions:set -DnewVersion=$originalVersion
