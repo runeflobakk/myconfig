@@ -1,0 +1,3 @@
+#/bin/bash
+
+xmllint --format - | highlight --out-format=ansi --syntax=$1
