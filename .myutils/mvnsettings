@@ -98,7 +98,7 @@ if [[ -z "$*" || "$1" == "-h" || "$1" == "--help" ]]; then
   echo -e "Choose which settings to use for Maven.\n"
   echo "$(strong Usage:)"
   echo -e "  $(basename $0) $(underline variant)"
-  echo -e "  $(basename $0) --bootstrap $(underline variant)\n"
+  echo -e "  $(basename $0) --bootstrap $(underline newVariant)\n"
   if [[ ! -z "$(variants)" ]]; then
     echo "where $(underline variant) may be one of:"
     for name in $(variants); do echo " - $(markIfCurrent ${name})"; done
