@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
 
+#
+# Apache License 2.0 - http://www.apache.org/licenses/LICENSE-2.0.txt
+#
+# DISCLAIMER
+# I have only tested this script on OS X, and it uses BASH features not
+# available in versions prior to 4.2. (Newer BASH can be installed with
+# for instance Homebrew - http://brew.sh)
+# It should work on any *nix with BASH 4.2 or greater, though I cannot
+# guarantie it. Any portability fixes are welcome!
+#
+
+
 if [[ ${BASH_VERSINFO[0]} < 4 || ${BASH_VERSINFO[1]} < 2 ]]; then
   echo "This script requires Bash version 4.2 or greater. You are using version ${BASH_VERSION}."
   exit 255
