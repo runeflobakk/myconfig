@@ -7,14 +7,14 @@ fi
 
 m2dir="${HOME}/.m2"
 actualSettings="${m2dir}/settings.xml"
-
+defaultNewVariantName="default"
 
 function variants {
   for settingsVariant in $(find ${m2dir} -depth 1 -type f -name "settings-*.xml"); do echo $(nameOf "$settingsVariant"); done
 }
 
 function markIfCurrent {
-  if [[ "$1" == "$(currentVariant)" ]]; then tput setaf 2; echo -n "$* (*)"; tput sgr0
+  if [[ "$1" == "$(currentVariant)" ]]; then echo -n "$* $(info \(*\))"
   else echo -n "$*"; fi
 }
 
@@ -26,6 +26,10 @@ function nameOf {
 function currentVariant {
   if [[ -L "${actualSettings}" ]]; then echo $(nameOf $(readlink "${actualSettings}"))
   else echo ""; fi
+}
+
+function info {
+  tput setaf 2; echo -n "$*"; tput sgr0
 }
 
 function error {
@@ -40,38 +44,84 @@ function underline {
   tput smul; echo -n "$*"; tput rmul
 }
 
+function gettingStarted {
+  echo "There are no settings.xml variants available to choose from."
+
+  echo -e "\nTo use mvnsettings you need to have at least 1 file containing any"
+  echo "user-specific configuration for Maven, as described at"
+  echo "$(underline http://maven.apache.org/settings.html), located in ${m2dir},"
+  echo "and named as $(strong settings-variantname.xml). The $(strong variantname) part"
+  echo "of the filename is recognized by mvnsettings to be included as a variant to"
+  echo "choose from. You may have as many files following this naming scheme as you"
+  echo "need, and they will all be available to mvnsettings to activate as your"
+  echo "\"current\" settings.xml configuration."
+}
+
+function gettingStartedWithExistingSettings {
+  echo -e "\nThe easiest way to start using mvnsettings is to rename your existing settings.xml"
+  echo "to for instance settings-${defaultNewVariantName}.xml, and then run $(strong \"mvnsettings ${defaultNewVariantName}\") to"
+  echo "activate it. This command will do exactly that:"
+  echo " mv \"${actualSettings}\" \"${m2dir}/settings-${defaultNewVariantName}.xml\"; mvnsettings ${defaultNewVariantName}"
+}
+
+function gettingStartedFromScratch {
+  echo -e "\nYou don't seem to have an existing settings.xml in ${m2dir}."
+  echo "You can run $(strong mvnsettings --bootstrap [name]) to create a new settings variant."
+  echo "The $(strong name) parameter is optional, and if given it will be the name of"
+  echo "the settings.xml variant. Otherwise the name will be \"${defaultNewVariantName}\"."
+}
+
+function initialSettingsXml {
+  echo '<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"'
+  echo '          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"'
+  echo '          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0'
+  echo '                              http://maven.apache.org/xsd/settings-1.0.0.xsd">'
+  echo '    <!-- see http://maven.apache.org/settings.html -->'
+  echo '</settings>'
+}
+
 
 
 if [[ -z "$*" || "$1" == "-h" || "$1" == "--help" ]]; then
   echo -e "Choose which settings to use for Maven.\n"
   echo "$(strong Usage:)"
-  echo -e "  $(basename $0) $(underline variant)\n"
+  echo -e "  $(basename $0) $(underline variant)"
+  echo -e "  $(basename $0) --bootstrap $(underline variant)\n"
   if [[ ! -z "$(variants)" ]]; then
     echo "where $(underline variant) may be one of:"
     for name in $(variants); do echo " - $(markIfCurrent ${name})"; done
   else
-    echo "There are no settings.xml variants available to choose from."
-    
-    echo -e "\nTo use mvnsettings you need to create at least 1 file containing any"
-    echo "user-specific configuration for Maven, as described at"
-    echo "$(underline http://maven.apache.org/settings.html), located in ${m2dir},"
-    echo "and named as $(strong settings-variantname.xml). The $(strong variantname) part"
-    echo "of the filename is recognized by mvnsettings to be included as a variant to"
-    echo "choose from. You may have as many files following this naming scheme as you"
-    echo "need, and they will all be available to mvnsettings to activate as your"
-    echo "\"current\" settings.xml configuration."
-
+    gettingStarted
     if [[ -f "${actualSettings}" ]]; then
-      echo -e "\nThe easiest way to start using mvnsettings is to rename your existing settings.xml"
-      echo "to for instance settings-default.xml, and then run $(strong \"mvnsettings default\") to"
-      echo "activate it. This command will do exactly that:"
-      echo " mv \"${actualSettings}\" \"${m2dir}/settings-default.xml\"; mvnsettings default"
+      gettingStartedWithExistingSettings;
+    else
+      gettingStartedFromScratch
     fi
   fi
   exit 1
 fi
 
-variant="$1"
+
+if [[ "$1" == "--bootstrap" ]]; then
+  variant="${2:-$defaultNewVariantName}"
+  newSettings="${m2dir}/settings-${variant}.xml"
+  if [[ -e "${newSettings}" ]]; then
+    echo "$(error Unable to create new settings file, because this already exists:)"
+    echo "${newSettings}"
+    exit 1
+  else
+    initialSettingsXml > ${newSettings}
+    echo "New settings variant is named $(underline ${variant})."
+    echo "You can edit the file ${newSettings} to your own likings."
+    echo "You can activate these settings with $(strong mvnsettings ${variant})"
+  fi
+  exit 0
+else
+  variant="$1"
+fi
+
+
+
 
 if [[ "${variant}" == "$(currentVariant)" ]]; then
   echo "\"${variant}\" is already active."
