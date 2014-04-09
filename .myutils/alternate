@@ -3,9 +3,9 @@
 while read line
 do
   tput sgr0
-  echo $line
+  echo "${line}"
   read line
   tput setaf 7
-  echo $line
+  echo "${line}"
 done
 tput sgr0
