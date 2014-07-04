@@ -1,0 +1,30 @@
+[user]
+	name = Rune Flobakk
+	email = flobakk@gmail.com
+[credential]
+	helper = osxkeychain
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore_global
+	autocrlf = input
+	symlinks = true
+[color]
+	ui = true
+[include]
+	path = .gitconfig_github
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[push]
+	default = simple
+[alias]
+	ci = commit
+	co = checkout
+	st = status
+	f = fetch
+	pr = pull -r
+	ll = log --pretty=\"%s %H (%an)\" --graph
+	diw = diff -w --ignore-space-at-eol

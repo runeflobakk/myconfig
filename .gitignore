@@ -2,7 +2,9 @@
 *
 
 # except
+!.gitconfig
 !.gitignore
+!.gitignore_global
 !.myutils
 !.sbtconfig
 !.vimrc
