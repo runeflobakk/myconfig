@@ -14,7 +14,7 @@
 	path = .gitconfig_github
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -28,3 +28,4 @@
 	pr = pull -r
 	ll = log --pretty=\"%C(blue)%H %C(white)%s %C(auto)%d %C(green)[%ar] %C(yellow)(%an)%C(reset)\" --graph --decorate
 	diw = diff -w --ignore-space-at-eol
+	su = submodule update --recursive
