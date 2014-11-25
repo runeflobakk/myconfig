@@ -26,6 +26,6 @@
 	st = status
 	f = fetch
 	pr = pull -r
-	ll = log --pretty=\"%C(blue)%H %C(white)%s %C(auto)%d %C(green)[%ar] %C(yellow)(%an)%C(reset)\" --graph --decorate
+	ll = log --pretty=\"%C(blue)%h %C(white)%s %C(auto)%d %C(green)[%ai (%ar)] %C(yellow)(%an)%C(reset)\" --graph --decorate --author-date-order
 	diw = diff -w --ignore-space-at-eol
 	su = submodule update --recursive
