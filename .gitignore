@@ -10,3 +10,6 @@
 !.vimrc
 !.ncmpcpp
 !.ncmpcpp/config
+!.LaunchAgents
+!.LaunchAgents/*
+
