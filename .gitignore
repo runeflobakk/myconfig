@@ -12,4 +12,6 @@
 !.ncmpcpp/config
 !.LaunchAgents
 !.LaunchAgents/*
+!.m2
+!.m2/nl.mwensveen.m2e.extras.antrun.config.xml
 
