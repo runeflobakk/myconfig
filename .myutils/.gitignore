@@ -7,3 +7,4 @@
 !pretty
 !mvn-override-version
 !alternate
+!git-open
