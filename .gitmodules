@@ -1,0 +1,3 @@
+[submodule ".myutils/git-open.repo"]
+	path = .myutils/git-open.repo
+	url = git@github.com:paulirish/git-open.git

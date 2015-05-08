@@ -5,6 +5,7 @@
 !.gitconfig
 !.gitignore
 !.gitignore_global
+!.gitmodules
 !.myutils
 !.sbtconfig
 !.vimrc
