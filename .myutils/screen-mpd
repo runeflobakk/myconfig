@@ -1,0 +1,1 @@
+screen -mS mpd -c ~/.myutils/mpd.screenrc

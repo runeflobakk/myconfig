@@ -8,3 +8,5 @@
 !mvn-override-version
 !alternate
 !git-open
+!mpd.screenrc
+!screen-mpd
