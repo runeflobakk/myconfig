@@ -15,4 +15,5 @@
 !.LaunchAgents/*
 !.m2
 !.m2/nl.mwensveen.m2e.extras.antrun.config.xml
-
+!.iterm2
+!.iterm2/com.googlecode.iterm2.plist
