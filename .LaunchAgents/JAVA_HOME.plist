@@ -10,7 +10,7 @@
         <string>launchctl</string>
         <string>setenv</string>
         <string>JAVA_HOME</string>
-        <string>/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home</string>
+        <string>/Library/Java/JavaVirtualMachines/jdk1.8.0_72.jdk/Contents/Home</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
