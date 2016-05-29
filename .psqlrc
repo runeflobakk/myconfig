@@ -5,3 +5,4 @@
 \pset linestyle unicode
 \pset border 2
 \pset pager off
+\pset null '<>'
