@@ -8,16 +8,20 @@
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
 	symlinks = true
+    pager = diff-so-fancy | less --tabs=4 -RFX
 [color]
 	ui = true
 [include]
 	path = .gitconfig_github
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[pager]
+    diff = diff-so-fancy | less --tabs=4 -RFX --pattern='^(added|deleted|modified): '
+    show = diff-so-fancy | less --tabs=4 -RFX --pattern='^(added|deleted|modified): '
 [push]
 	default = simple
 [alias]
@@ -27,6 +31,13 @@
 	f = fetch
 	pr = pull -r
 	ll = log --pretty=\"%C(blue)%h %C(white)%s %C(auto)%d %C(green)[%ai (%ar)] %C(yellow)(%an)%C(reset)\" --graph --decorate --author-date-order
-	diw = diff -w --ignore-space-at-eol
-	diww = diff -w --ignore-space-at-eol --color-words
 	su = submodule update --recursive
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[diff]
+	compactionHeuristic = 1
+[diff-so-fancy]
+	markEmptyLines = false
