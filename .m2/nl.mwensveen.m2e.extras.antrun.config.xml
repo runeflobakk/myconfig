@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ns2:antrunconfig xmlns:ns2="nl.mwensveen.m2e.extras.antrun">
         <config-items>
-                <config-item>
+                <!--config-item>
                         <groupid>no.posten.dpost.offentlig</groupid>
                         <artifactid>offentlig-adapter</artifactid>
                         <executionid>generate-buildNumber-properties</executionid>
@@ -11,7 +11,7 @@
                         <groupid>no.posten.dpost.offentlig</groupid>
                         <artifactid>offentlig-configuration</artifactid>
                         <executionid>generate-buildNumber-properties</executionid>
-                        <run>true</run>
+                        <run>false</run>
                 </config-item>
                 <config-item>
                         <groupid>no.posten.dpost.offentlig</groupid>
@@ -48,6 +48,6 @@
                         <artifactid>dpost-core</artifactid>
                         <executionid>generate-buildNumber-properties</executionid>
                         <run>true</run>
-                </config-item>
+                </config-item-->
         </config-items>
 </ns2:antrunconfig>
