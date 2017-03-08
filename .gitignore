@@ -18,3 +18,5 @@
 !.iterm2
 !.iterm2/com.googlecode.iterm2.plist
 !.psqlrc
+!.emacs.d
+!.emacs.d/init.el
