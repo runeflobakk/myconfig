@@ -1,4 +1,3 @@
-\x auto
 \set VERBOSITY verbose
 \timing
 \encoding unicode
@@ -6,3 +5,4 @@
 \pset border 2
 \pset pager off
 \pset null '<>'
+\x auto
