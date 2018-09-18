@@ -36,7 +36,5 @@
 	oldHighlight = red bold 52
 	newNormal = green bold
 	newHighlight = green bold 22
-[diff]
-	compactionHeuristic = 1
 [diff-so-fancy]
 	markEmptyLines = false
