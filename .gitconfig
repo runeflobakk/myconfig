@@ -34,3 +34,5 @@
     markEmptyLines = false
 [merge]
     log = true
+[pull]
+	ff = only
