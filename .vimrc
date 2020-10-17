@@ -14,6 +14,17 @@ call vundle#end()
 
 
 
+"vim-plug
+call plug#begin()
+  Plug 'tpope/vim-sensible'
+
+  "On-demand loading
+  Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+
+  Plug 'liuchengxu/graphviz.vim'
+call plug#end()
+
+
 
 "Other user config
 syntax on
