@@ -16,7 +16,9 @@
     diff = diff-so-fancy | less -RXF --tabs=4
     show = diff-so-fancy | less -RXF --tabs=4
 [push]
-	default = simple
+    default = simple
+[fetch]
+    prune = true
 [alias]
 	ci = commit
 	co = checkout
