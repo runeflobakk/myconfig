@@ -2419,6 +2419,10 @@
 	<integer>2</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
+	<key>TerminalMargin</key>
+	<integer>27</integer>
+	<key>TerminalVMargin</key>
+	<integer>4</integer>
 	<key>ThreeFingerEmulates</key>
 	<false/>
 	<key>TmuxDashboardLimit</key>
