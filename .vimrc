@@ -22,6 +22,8 @@ call plug#begin()
   Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
   Plug 'liuchengxu/graphviz.vim'
+
+  Plug 'google/vim-jsonnet'
 call plug#end()
 
 
