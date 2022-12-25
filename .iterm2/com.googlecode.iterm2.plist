@@ -1933,7 +1933,7 @@
 			<key>Shortcut</key>
 			<string></string>
 			<key>Show Status Bar</key>
-			<true/>
+			<false/>
 			<key>Silence Bell</key>
 			<true/>
 			<key>Smart Cursor Color</key>
@@ -2390,6 +2390,8 @@
 	<key>RightOption</key>
 	<integer>3</integer>
 	<key>SavePasteHistory</key>
+	<false/>
+	<key>SeparateStatusBarsPerPane</key>
 	<false/>
 	<key>Show Toolbelt</key>
 	<false/>
