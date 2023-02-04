@@ -3,6 +3,8 @@
 \encoding unicode
 \pset linestyle unicode
 \pset border 2
-\pset pager off
 \pset null '<>'
-\x auto
+
+\set x '\\setenv PAGER less; \\x auto; \\pset pager off'
+\set xx '\\setenv PAGER \'pspg -s 6 -X --no-mouse\'; \\x off; \\pset pager on'
+:xx
