@@ -1,5 +1,0 @@
-These should be linked from:
-
-* ~/Library/LaunchAgents - for user-specific daemons/agents
-* /Library/LaunchDaemons - for system daemons/agents
-
