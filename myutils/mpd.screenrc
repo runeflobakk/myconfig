@@ -1,14 +1,16 @@
 caption always
 caption string '%{= wk}[ %{k}%H %{k}][%= %{= wk}%?%-Lw%?%{r}(%{r}%n*%f%t%?(%u)%?%{r})%{k}%?%+Lw%?%?%= %{k}][%{b} %Y-%m-%d %{k}%c %{k}]'
 
+bind ' ' windowlist -b
+
 screen -t "Music Player Daemon"
-number 2
-stuff "mpd --stdout --no-daemon --verbose"
+number 1
+stuff "mpd --stdout --no-daemon^M"
+
+split
+focus down
 
 screen -t "MPD Audio Scrobbler"
-number 3
+number 2
 stuff "sleep 3; mpdas"
-
-screen -t "Music" ncmpcpp
-number 1
 
