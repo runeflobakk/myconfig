@@ -18,6 +18,6 @@ clock_display_seconds = "yes"
 
 
 # == Visualizer ==
-visualizer_fifo_path =    "/tmp/mpd.fifo"
+visualizer_data_source =    "/tmp/mpd.fifo"
 visualizer_output_name =  "FIFO file"
 visualizer_type =         "spectrum"
