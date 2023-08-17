@@ -44,3 +44,5 @@
 	ff = only
 [init]
 	defaultBranch = main
+[includeIf "gitdir:~/Code/digipost/"]
+	path = ~/Code/digipost/.gitconfig_digipost
