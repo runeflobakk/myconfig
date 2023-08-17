@@ -1,6 +1,7 @@
 [user]
 	name = Rune Flobakk
 	email = flobakk@gmail.com
+	signingkey = 08348DE4F9A1D1A581C21706FCCBAFC64F17CEF9
 [credential]
 	helper = osxkeychain
 [core]
@@ -8,6 +9,8 @@
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
 	symlinks = true
+[commit]
+	gpgsign = true
 [color]
 	ui = true
 [include]
