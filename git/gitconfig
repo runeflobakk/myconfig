@@ -9,6 +9,7 @@
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
 	symlinks = true
+	quotepath = off
 [commit]
 	gpgsign = true
 [color]
