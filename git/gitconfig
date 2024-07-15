@@ -29,7 +29,7 @@
 	st = status
 	f = fetch
 	pr = pull -r
-	ll = log --pretty=\"%C(blue)%h %C(white)%s %C(auto)%d %C(green)[%ai (%ar)] %C(yellow)(%an)%C(reset)\" --graph --decorate --author-date-order
+	ll = log --pretty=\"%C(blue)%h %C(yellow)%G? %C(white)%s %C(auto)%d %C(green)[%ai (%ar)] %C(yellow)(%an)%C(reset)\" --graph --decorate --author-date-order
 	su = submodule update --recursive
 	bn = rev-parse --abbrev-ref HEAD
 [color "diff-highlight"]
