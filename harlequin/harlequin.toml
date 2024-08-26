@@ -1,0 +1,8 @@
+default_profile = "default"
+
+[profiles.default]
+adapter = "postgres"
+theme = "monokai"
+limit = 200
+keymap_name = ["vscode"]
+locale = "C.UTF-8"
