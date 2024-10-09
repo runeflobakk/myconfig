@@ -27,6 +27,9 @@ defaults write -g KeyRepeat -int 1
 echo '  fast initial delay before repeating'
 defaults write -g InitialKeyRepeat -int 14
 
+echo '  disable automatic spelling correction'
+defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
+
 /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
 
 
