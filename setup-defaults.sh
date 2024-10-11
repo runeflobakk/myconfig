@@ -86,6 +86,8 @@ echo 'Menu bar icons'
 echo '  Bluetooth'
 defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist "Bluetooth" -int 18
 
+echo '  VPN Status'
+open "/System/Library/CoreServices/Menu Extras/vpn.menu" -gj
 
 # ----------------------------------------------
 echo 'SMB file sharing'
