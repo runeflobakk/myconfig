@@ -81,6 +81,12 @@ killall Finder 2> /dev/null
 
 
 
+# -------------------------------------------
+echo 'Menu bar icons'
+echo '  Bluetooth'
+defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist "Bluetooth" -int 18
+
+
 # ----------------------------------------------
 echo 'SMB file sharing'
 
