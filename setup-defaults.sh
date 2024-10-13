@@ -30,6 +30,9 @@ defaults write -g InitialKeyRepeat -int 14
 echo '  disable automatic spelling correction'
 defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 
+echo '  disable accent popup when holding key'
+defaults write -g ApplePressAndHoldEnabled -bool false
+
 /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
 
 
