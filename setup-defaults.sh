@@ -81,6 +81,14 @@ killall Finder 2> /dev/null
 
 
 
+# --------------------------------------------
+echo 'Window handling'
+
+echo '  close windows when closing an application'
+defaults write NSGlobalDomain "NSQuitAlwaysKeepsWindows" -bool false
+
+
+
 # -------------------------------------------
 echo 'Menu bar icons'
 echo '  Bluetooth'
