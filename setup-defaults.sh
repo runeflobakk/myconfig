@@ -33,6 +33,9 @@ defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 echo '  disable accent popup when holding key'
 defaults write -g ApplePressAndHoldEnabled -bool false
 
+echo '  enable keyboard navigation'
+defaults write -g AppleKeyboardUIMode -bool true
+
 /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
 
 
