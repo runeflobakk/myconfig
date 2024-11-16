@@ -17,6 +17,7 @@ videoPlayer="io.mpv"
 echo "  video player $videoPlayer"
 duti -s "$videoPlayer" org.webmproject.webm all
 duti -s "$videoPlayer" public.mpeg-4 all
+duti -s "$videoPlayer" public.mpeg all
 duti -s "$videoPlayer" public.avi all
 duti -s "$videoPlayer" com.apple.quicktime-movie all
 duti -s "$videoPlayer" com.apple.m4v-video all
