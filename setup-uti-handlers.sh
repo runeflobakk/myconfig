@@ -28,6 +28,7 @@ echo "  audio player $audioPlayer"
 duti -s "$audioPlayer" public.mp3 all
 duti -s "$audioPlayer" public.mpeg-4-audio all
 duti -s "$audioPlayer" public.aiff-audio all
+duti -s "$audioPlayer" public.aac-audio all
 duti -s "$audioPlayer" public.audio all
 
 
