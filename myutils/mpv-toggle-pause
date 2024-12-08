@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# If running this script via ssh, /usr/libexec/sshd-keygen-wrapper
+# needs to be added to 
+# System Settings -> Privacy & Security -> Accessibility
+
+
+osascript -e 'tell application "mpv" to activate' -e 'tell application "System Events" to keystroke space'
+
