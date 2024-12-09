@@ -5,5 +5,12 @@
 # System Settings -> Privacy & Security -> Accessibility
 
 
-osascript -e 'tell application "mpv" to activate' -e 'tell application "System Events" to keystroke space'
+osascript -e '
+if application id "io.mpv" is running then
+    tell application id "io.mpv" to activate
+    tell application "System Events" to keystroke "p"
+else
+    error "mpv not running" number 9000
+end if
+'
 
