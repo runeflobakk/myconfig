@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+debug="false"
+host="vg.no"
+logfile="/tmp/connectivity-${host}.log"
+onlineMark="Online"
+offlineMark="Offline"
+
+checkTimeoutSeconds="2"
+checkIntervalSeconds="10"
+
+logDebug() {
+    [[ "${debug}" == true ]] && echo "[DEBUG] $*"
+}
+
+lastResult() {
+    local lastResult="$(tail -1 ${logfile} 2> /dev/null)"
+    echo "${lastResult%% *}"
+}
+
+summarize() {
+    if [[ -f ${logfile} ]]; then
+        echo "The last results from trying to reach ${host}:"
+        tail -n 15 ${logfile}
+        echo "The entire log was written to ${logfile}"
+    fi
+}
+
+trap "summarize && exit" SIGINT
+
+echo "Start checking connectivity to ${host} \
+    with ${checkIntervalSeconds} seconds delay between checks, \
+    and using ${checkTimeoutSeconds} seconds timeout for each check"
+echo "Logging to ${logfile}."
+
+while :
+do
+    trap - SIGALRM  #ping fails to trap SIGALRM from timeout itself, and echos annoying "Alarm clock: 14"
+    ping -o -t ${checkTimeoutSeconds} ${host} > /dev/null 2>&1
+    pingResult=$?
+    logDebug "ping ${host} resulted in exit code ${pingResult}"
+    if [[ $pingResult -eq 0 ]]; then
+        [[ "$(lastResult)" != "${onlineMark}" ]] && echo -e "${onlineMark} $(date -Iseconds)" | tee -a ${logfile}
+    else
+        [[ "$(lastResult)" != "${offlineMark}" ]] && echo -e "${offlineMark} $(date -Iseconds)" | tee -a ${logfile}
+    fi
+    sleep ${checkIntervalSeconds}
+done
+
