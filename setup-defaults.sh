@@ -96,6 +96,23 @@ defaults write NSGlobalDomain "NSQuitAlwaysKeepsWindows" -bool false
 
 
 # -------------------------------------------
+echo 'Hot Corners'
+
+echo '  disable top left'
+defaults write com.apple.dock wvous-tl-corner -int 0
+
+echo '  disable top right'
+defaults write com.apple.dock wvous-tr-corner -int 0
+
+echo '  disable bottom left'
+defaults write com.apple.dock wvous-bl-corner -int 0
+
+echo '  disable bottom right'
+defaults write com.apple.dock wvous-br-corner -int 0
+
+
+
+# -------------------------------------------
 echo 'Menu bar icons'
 echo '  Bluetooth'
 defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist "Bluetooth" -int 18
