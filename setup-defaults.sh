@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Resources:
+# https://macos-defaults.com
+
 echo 'Trackpad preferences'
 
 echo '  three finger drag'
