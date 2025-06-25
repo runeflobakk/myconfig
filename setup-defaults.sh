@@ -39,6 +39,9 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 echo '  enable keyboard navigation'
 defaults write -g AppleKeyboardUIMode -bool true
 
+echo '  disable showing emoji & symbols with fn key (requires restart)'
+defaults write com.apple.HIToolbox AppleFnUsageType -int "0"
+
 /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
 
 
