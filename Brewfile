@@ -87,6 +87,7 @@ cask "discord"
 # Media
 cask "spotify"
 cask "aural"
+cask "stolendata-mpv"
 cask "loopback"
 cask "audacity"
 
