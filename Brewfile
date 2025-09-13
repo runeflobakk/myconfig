@@ -1,7 +1,6 @@
 # TAPS
 # ----------------------------------
 tap "azure/kubelogin"
-tap "homebrew/core"
 
 
 
