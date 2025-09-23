@@ -31,8 +31,9 @@ function markIfCurrent {
 }
 
 function nameOf {
-  local settingsBasename=$(basename "$1")
-  echo "${settingsBasename:9:-4}"
+  local settingsBasename="$(basename "$1")"
+  local settingsBasenameWoExt="${settingsBasename%.*}"
+  echo "${settingsBasenameWoExt:9}"
 }
 
 function currentVariant {
