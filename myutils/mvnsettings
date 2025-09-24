@@ -22,7 +22,7 @@ actualSettings="${m2dir}/settings.xml"
 defaultNewVariantName="default"
 
 function variants {
-  for settingsVariant in $(find ${m2dir} -depth 1 \( -type f -o -type l \) -name "settings-*.xml"); do echo $(nameOf "$settingsVariant"); done
+  for settingsVariant in $(find ${m2dir} -maxdepth 1 \( -type f -o -type l \) -name "settings-*.xml"); do echo $(nameOf "$settingsVariant"); done
 }
 
 function markIfCurrent {
