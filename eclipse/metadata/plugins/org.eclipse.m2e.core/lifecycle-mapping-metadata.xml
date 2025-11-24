@@ -136,6 +136,19 @@
     </pluginExecution>
     <pluginExecution>
       <pluginExecutionFilter>
+        <groupId>org.liquibase</groupId>
+        <artifactId>liquibase-maven-plugin</artifactId>
+        <versionRange>[1,)</versionRange>
+        <goals>
+          <goal>update</goal>
+        </goals>
+      </pluginExecutionFilter>
+      <action>
+        <ignore />
+      </action>
+    </pluginExecution>
+    <pluginExecution>
+      <pluginExecutionFilter>
         <groupId>org.jooq</groupId>
         <artifactId>jooq-codegen-maven</artifactId>
         <versionRange>[1,)</versionRange>
