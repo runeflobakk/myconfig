@@ -47,3 +47,5 @@
 	defaultBranch = main
 [includeIf "gitdir:~/Code/digipost/"]
 	path = ~/Code/digipost/.gitconfig_digipost
+[gpg "ssh"]
+	allowedSignersFile = /Users/rune/.ssh/allowed_signers
