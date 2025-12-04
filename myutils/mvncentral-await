@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+
+#
+# Apache License 2.0 - http://www.apache.org/licenses/LICENSE-2.0.txt
+#
+# DISCLAIMER
+# I have only tested this script on OS X, and it uses BASH features not
+# available in versions prior to 4.2. (Newer BASH can be installed with
+# for instance Homebrew - http://brew.sh)
+# It should work on any *nix with BASH 4.2 or greater, though I cannot
+# guarantie it. Any portability fixes are welcome!
+#
+
+
+if [[ -z "$*" || "$1" == "-h" || "$1" == "--help" ]]; then
+    echo -e "Utility to await an artifact being published to Maven Central\n"
+    echo "Usage:"
+    echo "  $(basename $0) groupId:artifactId:version"
+    exit 1
+fi
+
+IFS=':' read -ra coordinates <<< "$1"
+
+if (( ${#coordinates[*]} != 3 )); then
+    echo "Invalid argument: $1"
+    echo "Must be on the form groupId:artifactId:version"
+    exit 1
+fi
+
+
+groupId=${coordinates[0]}
+artifactId=${coordinates[1]}
+version=${coordinates[2]}
+
+repositoryPath=${groupId//./\/}/${artifactId}/${version}/
+centralUrl="https://repo1.maven.org/maven2/${repositoryPath}"
+
+echo "Awaiting $centralUrl to not respond 404 Not Found"
+
+trap 'echo "Waiting was aborted"; exit 130' INT
+echo "Abort with Ctrl+C"
+while [[ $(curl -s -o /dev/null -w "%{http_code}" $centralUrl) -eq "404" ]]; do echo "Still waiting..."; sleep 10; done
+trap - INT
+
+echo -e "Finished waiting!\n"
+echo "Should now be possible to depend on"
+echo "<dependency>"
+echo "  <groupId>${groupId}</groupId>"
+echo "  <artifactId>${artifactId}</artifactId>"
+echo "  <version>${version}</version>"
+echo "</dependency>"
+

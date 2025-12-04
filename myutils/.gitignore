@@ -4,6 +4,7 @@
 # except
 !.gitignore
 !mvnsettings
+!mvncentral-await
 !pretty
 !mvn-override-version
 !alternate
