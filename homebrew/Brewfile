@@ -105,6 +105,7 @@ cask "tailscale-app"
 cask "bruno"
 cask "miro"
 cask "intellij-idea-ce"
+cask "vscodium"
 
 # Utils
 cask "qlmarkdown"
