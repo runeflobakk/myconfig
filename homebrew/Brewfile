@@ -54,6 +54,8 @@ brew "wget"
 brew "yarn"
 brew "yt-dlp"
 brew "azure/kubelogin/kubelogin"
+brew "typst"
+brew "pandoc"
 
 
 # CASKS
