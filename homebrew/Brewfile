@@ -59,6 +59,7 @@ brew "yt-dlp"
 brew "azure/kubelogin/kubelogin"
 brew "typst"
 brew "pandoc"
+brew "pastel"
 
 
 # CASKS
