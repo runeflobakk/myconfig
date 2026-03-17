@@ -11,7 +11,8 @@
 	symlinks = true
 	quotepath = off
 [commit]
-	gpgsign = true
+    gpgsign = true
+    verbose = true
 [color]
 	ui = true
 [include]
