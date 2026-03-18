@@ -47,6 +47,14 @@ defaults write com.apple.HIToolbox AppleFnUsageType -int "0"
 
 
 # -----------------------------------------
+echo 'Appearance'
+
+echo '  reduce transparency'
+defaults write com.apple.universalaccess reduceTransparency -bool true
+
+
+
+# -----------------------------------------
 echo 'Dock'
 
 echo '  autohide'
