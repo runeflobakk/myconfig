@@ -2242,6 +2242,8 @@
 			<string>B03A5DCA-7F76-4739-B7B0-958F0B20F1FC</string>
 			<key>Has Hotkey</key>
 			<true/>
+			<key>Height Percentage</key>
+			<integer>-1</integer>
 			<key>Hide After Opening</key>
 			<false/>
 			<key>Horizontal Spacing</key>
@@ -2317,11 +2319,11 @@
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
-			<integer>55</integer>
+			<integer>60</integer>
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>3000</integer>
+			<integer>5000</integer>
 			<key>Scrollback With Status Bar</key>
 			<false/>
 			<key>Scrollback in Alternate Screen</key>
@@ -2751,6 +2753,8 @@
 			<real>1</real>
 			<key>Visual Bell</key>
 			<true/>
+			<key>Width Percentage</key>
+			<integer>100</integer>
 			<key>Window Type</key>
 			<integer>2</integer>
 			<key>Working Directory</key>
