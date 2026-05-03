@@ -97,6 +97,10 @@ defaults write com.apple.finder "ShowHardDrivesOnDesktop" -bool "true"
 echo '  show connected servers'
 defaults write com.apple.finder "ShowMountedServersOnDesktop" -bool "true"
 
+echo '  disable click to show desktop'
+defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool "false"
+
+killall WindowManager 2> /dev/null
 killall Finder 2> /dev/null
 
 
