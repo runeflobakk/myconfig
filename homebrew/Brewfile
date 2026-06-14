@@ -60,6 +60,7 @@ brew "azure/kubelogin/kubelogin"
 brew "typst"
 brew "pandoc"
 brew "pastel"
+brew "verapdf"
 
 
 # CASKS
