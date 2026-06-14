@@ -32,5 +32,6 @@ duti -s "$audioPlayer" public.aiff-audio all
 duti -s "$audioPlayer" public.aac-audio all
 duti -s "$audioPlayer" public.audio all
 duti -s "$audioPlayer" com.apple.m4a-audio all
+duti -s "$audioPlayer" com.microsoft.waveform-audio all
 duti -s "$audioPlayer" org.xiph.flac all
 
