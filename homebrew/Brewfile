@@ -1,6 +1,6 @@
 # TAPS
 # ----------------------------------
-tap "azure/kubelogin"
+tap "azure/kubelogin", trusted: true
 
 
 
