@@ -1,6 +1,7 @@
 # TAPS
 # ----------------------------------
 tap "azure/kubelogin", trusted: true
+tap "docker/tap", trusted: true
 
 
 
@@ -113,6 +114,7 @@ cask "bruno"
 cask "miro"
 cask "intellij-idea-ce"
 cask "vscodium"
+cask "docker/tap/sbx"
 
 # Utils
 cask "qlmarkdown"
