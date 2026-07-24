@@ -4,34 +4,34 @@
 #
 # Get app ID: osascript -e 'id of app "$appName"'
 
-if ! builtin type -P "duti" &> /dev/null; then
-  echo "This script requires duti (see https://github.com/moretension/duti)."
-  echo "It can be installed with brew install duti."
+if ! builtin type -P "utiluti" &> /dev/null; then
+  echo "This script requires utiluti (see https://github.com/scriptingosx/utiluti)."
+  echo "It can be installed with brew install utiluti."
   exit 1
 fi
 
-echo "duti tool available. Setting up handler..."
+echo "utiluti tool available. Setting up handler..."
 
 
 videoPlayer="io.mpv"
-echo "  video player $videoPlayer"
-duti -s "$videoPlayer" org.webmproject.webm all
-duti -s "$videoPlayer" public.mpeg-4 all
-duti -s "$videoPlayer" public.mpeg all
-duti -s "$videoPlayer" public.avi all
-duti -s "$videoPlayer" com.apple.quicktime-movie all
-duti -s "$videoPlayer" com.apple.m4v-video all
-duti -s "$videoPlayer" com.microsoft.windows-media-wmv all
-duti -s "$videoPlayer" public.movie all
+echo "  video player ${videoPlayer}"
+utiluti type set org.webmproject.webm ${videoPlayer}
+utiluti type set public.mpeg-4 ${videoPlayer}
+utiluti type set public.mpeg ${videoPlayer}
+utiluti type set public.avi ${videoPlayer}
+utiluti type set com.apple.quicktime-movie ${videoPlayer}
+utiluti type set com.apple.m4v-video ${videoPlayer}
+utiluti type set com.microsoft.windows-media-wmv ${videoPlayer}
+utiluti type set public.movie ${videoPlayer}
 
 audioPlayer="com.kv.Aural"
-echo "  audio player $audioPlayer"
-duti -s "$audioPlayer" public.mp3 all
-duti -s "$audioPlayer" public.mpeg-4-audio all
-duti -s "$audioPlayer" public.aiff-audio all
-duti -s "$audioPlayer" public.aac-audio all
-duti -s "$audioPlayer" public.audio all
-duti -s "$audioPlayer" com.apple.m4a-audio all
-duti -s "$audioPlayer" com.microsoft.waveform-audio all
-duti -s "$audioPlayer" org.xiph.flac all
+echo "  audio player ${audioPlayer}"
+utiluti type set public.mp3 ${audioPlayer}
+utiluti type set public.mpeg-4-audio ${audioPlayer}
+utiluti type set public.aiff-audio ${audioPlayer}
+utiluti type set public.aac-audio ${audioPlayer}
+utiluti type set public.audio ${audioPlayer}
+utiluti type set com.apple.m4a-audio ${audioPlayer}
+utiluti type set com.microsoft.waveform-audio ${audioPlayer}
+utiluti type set org.xiph.flac ${audioPlayer}
 
