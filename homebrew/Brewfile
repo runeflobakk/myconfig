@@ -35,6 +35,7 @@ brew "jenv"
 brew "jq"
 brew "kubernetes-cli"
 brew "kubeseal"
+brew "k9s"
 brew "libpq", link: true
 brew "maven"
 brew "ruby-install"
