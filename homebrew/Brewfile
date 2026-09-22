@@ -93,7 +93,6 @@ cask "firefox"
 # Messaging
 cask "messenger"
 cask "signal"
-cask "discord"
 
 # Media
 cask "spotify"
