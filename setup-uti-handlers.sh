@@ -19,6 +19,7 @@ utiluti type set org.webmproject.webm ${videoPlayer}
 utiluti type set public.mpeg-4 ${videoPlayer}
 utiluti type set public.mpeg ${videoPlayer}
 utiluti type set public.avi ${videoPlayer}
+utiluti type set org.matroska.mkv ${videoPlayer}
 utiluti type set com.apple.quicktime-movie ${videoPlayer}
 utiluti type set com.apple.m4v-video ${videoPlayer}
 utiluti type set com.microsoft.windows-media-wmv ${videoPlayer}
