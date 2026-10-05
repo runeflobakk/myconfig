@@ -10,6 +10,7 @@ tap "docker/tap", trusted: true
 brew "openssl@3"
 brew "azure-cli"
 brew "bash"
+brew "zsh-completions"
 brew "bat"
 brew "witr"
 brew "cloc"
